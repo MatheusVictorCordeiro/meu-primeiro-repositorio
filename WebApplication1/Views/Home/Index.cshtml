@@ -1,0 +1,56 @@
+﻿@model WebApplication1.Models.Pessoa
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Curso de ASP MVC</h2>
+
+
+
+
+
+<br/>
+<br />
+
+
+                                                          
+@using (Html.BeginForm("Lista", "Home", FormMethod.Post))       // Qual a função que vai executar, qual controller que ele esta, e qual metódo nesse caso "post", 
+                                                            ////    para usar o Helper (@), deve adcionar a classe no inicio da pagina com o @model WebApplication1.Models.Nome da classe, 
+                                                           
+
+{  <fieldset> 
+
+        <legend> Informações de Pessoas  </legend>
+
+        <div>
+         @Html.LabelFor(x => x.PessoaId) 
+        </div>
+
+        <div>
+           @Html.EditorFor(x =>x.PessoaId)
+        </div>
+
+
+         
+        <div>
+            <b>@Html.LabelFor(x => x.Nome)</b>
+        </div>
+
+        <div>
+           @Html.EditorFor(x=>x.Nome)
+        </div>
+
+
+
+
+        <div>
+            <b>@Html.LabelFor(x => x.Tipo)</b>
+        </div>
+
+        <div>
+            @Html.EditorFor(x=>x.Tipo)
+        </div>
+
+        <input type="submit" value="Enviar" />
+    </fieldset>
+}
